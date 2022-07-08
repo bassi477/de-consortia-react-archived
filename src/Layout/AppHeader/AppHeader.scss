@@ -1,0 +1,112 @@
+.app {
+    &-header {
+        display: flex;
+        padding: 0.4rem 1.2rem;
+        border-bottom: 0.1rem solid #54616c;
+        // border-radius: 25px;
+
+        .app-nav {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            .navbar-toggler {
+                font-weight: 600;
+                color: #54616c;
+                background: transparent;
+                border: none;
+                display: none;
+                margin-left: auto;
+            }
+
+            .brand-logo {
+                img {
+                    width: 100px;
+                }
+            }
+
+            &-list {
+                display: flex;
+                margin-left: auto;
+                flex-wrap: wrap;
+
+                &-item {
+                    display: inline-block;
+                    margin: auto;
+
+                    &:active {
+                        border-style: none;
+                    }
+                }
+
+                &-item.dropdown {
+                    display: inline-block;
+                }
+
+                &-item.dropdown .dropdown-toggle {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 0;
+
+                    img {
+                        width: 18px;
+                        padding: 0 5px;
+                    }
+                }
+
+                &-item button,
+                &-item.dropdown {
+                    padding: 0 1rem;
+                }
+
+                &-item button,
+                &-item.dropdown .dropdown-toggle {
+                    font-weight: 600;
+                    color: #54616c;
+                    background: transparent;
+                    border: none;
+                    font-size: 14px;
+                    cursor: pointer;
+                }
+
+                // &-item button:active,
+                // &-item button:focus,
+                // &-item.dropdown .dropdown-toggle:active,
+                // &-item.dropdown .dropdown-toggle:focus {
+                //     border-style: none;
+                //     border: none;
+                //     outline: none;
+                // }
+
+                &-item.dropdown {
+
+                    .dropdown-menu {
+                        display: none;
+                        position: absolute;
+                        flex-direction: column;
+                        align-items: center;
+                    }
+
+                    &:hover {
+                        .dropdown-menu {
+                            display: flex;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:768px) {
+    .app {
+        &-header {
+            .app-nav {
+                .navbar-toggler {
+                    display: block;
+                }
+            }
+        }
+    }
+}
