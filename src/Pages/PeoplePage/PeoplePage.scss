@@ -1,0 +1,187 @@
+@import '../../Styles/variables/colors.scss';
+.app-page {
+    &-title-container {
+        .page-title {
+            padding: 0.2rem 0.4rem;
+            font-size: 32px;
+        }
+    }
+
+    &-body {
+
+        .app-page-card-container {
+            margin: 10px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            flex-wrap: wrap;
+
+            .app-card {
+                width: 80%;
+                border: 1px solid gray;
+                border-radius: 15px;
+                margin: 0.5rem;
+                padding: 2rem 25px;
+                max-height: 500px;
+                display: flex;
+                background-color: rgba(253, 253, 253, 0.95);
+                transition: background-color 0.6s;
+                transform-style: preserve-3d;
+
+
+                &-profile {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: flex-start;
+                    margin: 0 25px;
+
+                    img {
+                        width: 100%;
+                    }
+                }
+
+                &-detail {
+                    display: flex;
+                    width: 100%;
+                    flex-direction: column;
+                    // justify-content: start;
+                    align-items: flex-start;
+
+                    .app-card-title {
+                        // color: #fff;
+                        font-weight: bold;
+                        font-size: 1.85em;
+                        font-style: normal;
+                        line-height: 1;
+                        margin-bottom: 25px;
+                    }
+
+                    .app-card-summary {
+                        display: flex;
+                        flex-direction: row;
+                        text-align: start;
+                        // color: #fff;
+
+                        .info {
+                            max-width: 60%;
+                            // margin-right: auto;
+                            display: -webkit-box;
+                            -webkit-line-clamp: 4;
+                            -webkit-box-orient: vertical;
+                            text-overflow: ellipsis;
+                            overflow: hidden;
+                            font-size: 1em;
+                        }
+
+                        .contact {
+                            font-weight: 600;
+                            margin-left: 25px;
+                            font-size: 1.125em;
+
+                            &-detail {
+                                display: flex;
+                                flex-direction: row;
+                                align-items: center;
+                                margin: 5px 0;
+
+                                img {
+                                    margin-right: 10px;
+                                    max-width: 30px;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    background-color: $theme-primary;
+                    border: 1px solid $theme-primary;
+
+                    // &-profile {
+                    //     display: flex;
+                    //     flex-direction: column;
+                    //     align-items: center;
+                    //     justify-content: flex-start;
+                    //     margin: 0 25px;
+
+                    //     img {
+                    //         width: 100%;
+                    //     }
+                    // }
+
+                    .app-card-detail {
+                        // display: flex;
+                        // width: 100%;
+                        // flex-direction: column;
+                        // // justify-content: start;
+                        // align-items: flex-start;
+
+                        .app-card-title {
+                            color: #fff;
+                            transition: color 0.6s;
+                            transform-style: preserve-3d;
+                            // font-weight: bold;
+                            // font-size: 2.25em;
+                            // font-style: normal;
+                            // line-height: 1;
+                            // margin-bottom: 25px;
+                        }
+
+                        .app-card-summary {
+                            // display: flex;
+                            // flex-direction: row;
+                            // text-align: start;
+                            color: #fff;
+                            transition: color 0.6s;
+                            transform-style: preserve-3d;
+                            // .info {
+                            //     // max-width: 60%;
+                            //     // // margin-right: auto;
+                            //     // display: -webkit-box;
+                            //     // -webkit-line-clamp: 4;
+                            //     // -webkit-box-orient: vertical;
+                            //     // text-overflow: ellipsis;
+                            //     // overflow: hidden;
+                            //     // font-size: 1em;
+                            // }
+
+                            //     .contact {
+                            //         font-weight: 600;
+                            //         margin-left: 25px;
+                            //         font-size: 1.125em;
+
+                            //         &-detail {
+                            //             display: flex;
+                            //             flex-direction: row;
+                            //             align-items: center;
+                            //             margin: 5px 0;
+
+                            //             img {
+                            //                 margin-right: 10px;
+                            //                 max-width: 30px;
+                            //             }
+                            //         }
+                            //     }
+                            // }
+                        }
+                    }
+                }
+            }
+
+            .app-grid-container {
+                padding: 10px;
+
+                .inner {
+                    margin: 10px;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    flex-wrap: wrap;
+
+
+                }
+            }
+        }
+    }
+}

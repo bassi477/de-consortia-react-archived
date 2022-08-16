@@ -1,8 +1,30 @@
+@import '../../Styles/variables/colors.scss';
+
+@-webkit-keyframes fadeIn {
+    from {
+        visibility: hidden;
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        visibility: hidden;
+    }
+
+    to {
+        visibility: visible;
+    }
+}
+
 .app {
     &-header {
         display: flex;
         padding: 0.4rem 1.2rem;
-        border-bottom: 0.1rem solid #54616c;
+        border-bottom: 0.1rem solid $theme-gray;
         // border-radius: 25px;
 
         .app-nav {
@@ -12,7 +34,7 @@
 
             .navbar-toggler {
                 font-weight: 600;
-                color: #54616c;
+                color: $theme-gray;
                 background: transparent;
                 border: none;
                 display: none;
@@ -41,33 +63,93 @@
 
                 &-item.dropdown {
                     display: inline-block;
-                }
 
-                &-item.dropdown .dropdown-toggle {
-                    display: inline-flex;
-                    justify-content: center;
-                    align-items: center;
-                    padding: 0;
+                    .dropdown-toggle {
+                        display: inline-flex;
+                        justify-content: center;
+                        align-items: center;
+                        padding: 0;
 
-                    img {
-                        width: 18px;
-                        padding: 0 5px;
+
+                        img {
+                            width: 18px;
+                            padding: 0 5px;
+                        }
                     }
+
+                    .dropdown-menu {
+                        display: flex;
+                        position: absolute;
+                        flex-direction: column;
+                        align-items: stretch;
+                        /* property name | duration | easing function | delay */
+                        -webkit-transition: all 0.25s ease-in;
+                        -moz-transition: all 0.25s ease-in;
+                        -o-transition: all 0.25s ease-in;
+                        transition: all 0.25s ease-in;
+                        opacity: 0;
+                        visibility: hidden;
+                    }
+
+                    &:hover {
+                        .dropdown-menu {
+                            display: flex;
+                            border: 1px solid $theme-gray;
+                            border-radius: 0.25rem;
+                            background-color: #fff;
+                            padding: 5px;
+                            opacity: 1;
+                            visibility: visible;
+                            /* property name | duration | easing function | delay */
+                            // -webkit-transition: all 4s ease-in;
+                            // -moz-transition: all 4s ease-in;
+                            // -o-transition: all 4s ease-in;
+                            // transition: all 4s ease-in;
+                            // // transition: fadeIn 4s 1s;
+                            // transition: display 4s 1s;
+                            // opacity: 0.4;
+
+                            .dropdown-menu-item {
+                                padding: 0.6rem;
+                                text-align: start;
+                            }
+
+                            .dropdown-divider {
+                                border-bottom: 1px solid $theme-gray;
+                                margin: 0 0.25rem;
+                                opacity: 0.2;
+                            }
+
+                        }
+                    }
+
+
                 }
 
-                &-item button,
+                // &-item.dropdown 
+
+                &-item a,
                 &-item.dropdown {
                     padding: 0 1rem;
                 }
 
-                &-item button,
+                &-item a,
                 &-item.dropdown .dropdown-toggle {
+                    text-decoration: none;
                     font-weight: 600;
-                    color: #54616c;
+                    color: $theme-gray;
                     background: transparent;
                     border: none;
                     font-size: 14px;
                     cursor: pointer;
+
+                    &.active {
+                        color: $theme-primary;
+                    }
+
+                    &:hover {
+                        color: $theme-primary;
+                    }
                 }
 
                 // &-item button:active,
@@ -78,22 +160,6 @@
                 //     border: none;
                 //     outline: none;
                 // }
-
-                &-item.dropdown {
-
-                    .dropdown-menu {
-                        display: none;
-                        position: absolute;
-                        flex-direction: column;
-                        align-items: center;
-                    }
-
-                    &:hover {
-                        .dropdown-menu {
-                            display: flex;
-                        }
-                    }
-                }
             }
         }
     }
